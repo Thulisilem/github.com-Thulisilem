@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gcobane Construction & Projects | Industrial Excellence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #fbbf24; 
+            --bg: #050505;
+            --surface: #0f1115;
+            --text-muted: #94a3b8;
+            --border: rgba(251, 191, 36, 0.2);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { background: var(--bg); color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+        h1, h2, h3 { font-family: 'Syncopate', sans-serif; text-transform: uppercase; letter-spacing: 4px; }
+
+        header {
+            position: fixed; width: 100%; top: 0; z-index: 1000;
+            padding: 25px 8%; display: flex; justify-content: space-between; align-items: center;
+            backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .logo { font-weight: 700; font-size: 1.1rem; color: var(--accent); text-decoration: none; }
+
+        .hero {
+            height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+            padding: 0 10%; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover; background-position: center;
+        }
+
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 5rem); line-height: 1.1; margin-bottom: 20px; }
+        .hero span { color: var(--accent); }
+
+        .ticker {
+            background: var(--accent); color: #000; padding: 12px 0; overflow: hidden; white-space: nowrap;
+            font-weight: 800; font-size: 0.7rem; letter-spacing: 2px;
+        }
+        .ticker-inner { display: inline-block; animation: ticker 40s linear infinite; }
+        @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        section { padding: 100px 10%; }
+        .section-tag { color: var(--accent); font-size: 0.7rem; font-weight: 700; margin-bottom: 15px; display: block; }
+
+        /* Bento Grid Layout */
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 320px;
+            gap: 20px;
+        }
+
+        .service-box {
+            position: relative;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .service-box img {
+            width: 100%; height: 100%; object-fit: cover;
+            opacity: 0.6; transition: 0.6s;
+        }
+
+        .service-box:hover img { opacity: 0.9; transform: scale(1.08); }
+
+        .service-box .overlay {
+            position: absolute; bottom: 0; left: 0; padding: 30px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.95));
+            width: 100%;
+        }
+
+        .service-box h3 { font-size: 0.85rem; margin-bottom: 10px; color: var(--accent); }
+        .service-box p { font-size: 0.8rem; color: #cbd5e1; line-height: 1.4; }
+
+        .box-large { grid-column: span 2; }
+        .box-tall { grid-row: span 2; }
+
+        .premium-table { width: 100%; border-collapse: collapse; margin-top: 50px; background: #0a0a0a; border-radius: 8px; overflow: hidden; }
+        .premium-table th { text-align: left; padding: 25px; border-bottom: 2px solid var(--accent); font-size: 0.65rem; color: var(--accent); }
+        .premium-table td { padding: 25px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.85rem; color: #e2e8f0; }
+        .premium-table tr:hover td { background: rgba(251, 191, 36, 0.05); color: var(--accent); }
+
+        .cta-button {
+            display: inline-block; padding: 22px 55px; background: var(--accent); color: #000;
+            text-decoration: none; font-family: 'Syncopate'; font-weight: 700; font-size: 0.75rem;
+            margin-top: 40px; border-radius: 4px; transition: 0.4s; letter-spacing: 2px;
+        }
+        .cta-button:hover { transform: scale(1.05); box-shadow: 0 0 40px rgba(251, 191, 36, 0.5); }
+
+        footer { padding: 100px 10%; background: #000; border-top: 1px solid var(--border); }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; }
+        
+        @media (max-width: 900px) {
+            .services-container { grid-template-columns: 1fr; grid-auto-rows: auto; }
+            .box-large, .box-tall { grid-column: span 1; grid-row: span 1; }
+            .service-box { height: 300px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">GCOBANE Construction Project Pty Ltd</a>
+        <nav style="display: flex; gap: 35px; font-size: 0.65rem; font-family: 'Syncopate';">
+            <a href="#services" style="color:#fff; text-decoration:none;">SERVICES</a>
+            <a href="#projects" style="color:#fff; text-decoration:none;">TRACK RECORD</a>
+            <a href="#contact" style="color:var(--accent); text-decoration:none;">INQUIRE</a>
+
+        </nav>
+    </header>
+
+    <section class="hero">
+        <span class="section-tag">Established 2017</span>
+       <style>
+    /* Kinetic Breathing Animation */
+    @keyframes textFloat {
+        0%, 100% { transform: translateY(0); filter: brightness(1); }
+        50% { transform: translateY(-10px); filter: brightness(1.3); }
+    }
+
+    .premium-hero-container {
+        padding: 40px;
+        background: #050505; /* Deep luxury black */
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .premium-h1 {
+        font-family: 'Syncopate', sans-serif;
+        font-weight: 900;
+        font-size: clamp(2.5rem, 8vw, 5.5rem);
+        line-height: 1.1;
+        color: #FFFFFF;
+        text-transform: uppercase;
+        letter-spacing: -1px;
+        margin: 0;
+        animation: textFloat 6s ease-in-out infinite;
+    }
+
+    .premium-h1 span {
+        display: block; /* Ensures it has its own space */
+        color: transparent;
+        -webkit-text-stroke: 1.5px #FFFFFF;
+        font-style: italic;
+        padding-right: 40px; /* FIXED: Prevents the 'e' from clipping */
+        letter-spacing: 5px;   /* FIXED: Opens up the 'Infrastructure' for legibility */
+        margin-top: 10px;
+        opacity: 0.9;
+    }
+
+    .premium-p {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.9); /* Pure bright white with slight softness */
+        max-width: 600px;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+        border-left: 2px solid #DAA520; /* Luxury gold accent line */
+        padding-left: 25px;
+        margin-top: 30px;
+    }
+
+    .premium-p strong {
+        color: #DAA520; /* Gold highlight */
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+    }
+</style>
+
+<div class="premium-hero-container">
+    <h1 class="premium-h1">
+        Precision 
+        <span>Infrastructure.</span>
+    </h1>
+    
+    <p class="premium-p">
+        <strong>100% Black-owned</strong><br>
+        Construction enterprise specializing in high-impact Building, Civil Engineering, and Technical Electrical solutions.
+    </p>
+</div>
+        <a href="#contact" class="cta-button">REQUEST CONSULTATION</a>
+    </section>
+
+    <div class="ticker">
+        <div class="ticker-inner">
+            CSD: MAAA1568982 • CIDB: 10237509 • SARS COMPLIANT • COIDA CERTIFIED • CIPC: 2017/420/520/07 • 100% BLACK OWNED • CSD: MAAA1568982 • CIDB: 10237509 • SARS COMPLIANT • COIDA CERTIFIED
+        </div>
+    </div>
+
+    <section id="services">
+        <span class="section-tag">Core Capabilities</span>
+        <h2 style="margin-bottom: 50px;">Our Disciplines</h2>
+        
+        <div class="services-container">
+            <div class="service-box box-large">
+                <img src="C:\Users\thuli\OneDrive\Desktop\gcobane\structural.jpg" alt="Structural Building">
+                <div class="overlay">
+                    <h3>01 / Building & Structural</h3>
+                    <p>Community halls, fire stations, industrial plants, and luxury residential complexes.</p>
+                </div>
+            </div>
+
+            <div class="service-box box-tall">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2000&auto=format&fit=crop" alt="Electrical Infrastructure">
+                <div class="overlay">
+                    <h3>02 / Technical Electrical</h3>
+                    <p>Low & high voltage networks, generator systems, and star-delta maintenance.</p>
+                </div>
+            </div>
+
+            <div class="service-box">
+                <img src="C:\Users\thuli\OneDrive\Desktop\gcobane\civil.jpg" alt="Civil Works">
+                <div class="overlay">
+                    <h3>03 / Civil Engineering</h3>
+                    <p>Major earthworks, high-traffic paving, and specialized kerb installation.</p>
+                </div>
+            </div>
+
+            <div class="service-box">
+                <img src="C:\Users\thuli\OneDrive\Desktop\gcobane\plumbing.jpg" alt="Industrial Plumbing">
+                <div class="overlay">
+                    <h3>04 / Plumbing Systems</h3>
+                    <p>Sewer systems, stormwater management, and commercial geyser plant installations.</p>
+                </div>
+            </div>
+
+            <div class="service-box box-large">
+                <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2000&auto=format&fit=crop" alt="Interior Architecture">
+                <div class="overlay">
+                    <h3>05 / Professional Finishing</h3>
+                    <p>Premium painting, industrial tiling, and modern ceiling architecture.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" style="background: #080808;">
+        <span class="section-tag">Archive</span>
+        <h2>Performance Ledger</h2>
+        
+        <table class="premium-table">
+            <thead>
+                <tr>
+                    <th>CLIENT</th>
+                    <th>SCOPE OF WORK</th>
+                    <th>DURATION</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>TRANSNET</td><td>Housing Refurbishment</td><td>21 MONTHS</td></tr>
+                <tr><td>MUNICIPALITY</td><td>Etwatwa Community Hall (Electrical)</td><td>2 MONTHS</td></tr>
+                <tr><td>HOUSING DEPT</td><td>Lenasia Geyser Systems</td><td>7 MONTHS</td></tr>
+                <tr><td>GB BODIES</td><td>Alberton Warehouse Generator</td><td>1 DAY</td></tr>
+                <tr><td>HOUSING</td><td>Chief Luthuli Ceiling Installations</td><td>4 MONTHS</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+<section class="eco-section" style="display: flex; align-items: center; gap: 80px; flex-wrap: wrap; background: linear-gradient(135deg, #080a0d 0%, #050505 100%); border-top: 1px solid rgba(251, 191, 36, 0.1);">
+        <div class="eco-text" style="flex: 1; min-width: 300px;">
+            <span class="section-tag" style="color: var(--accent); font-size: 0.7rem; font-weight: 700; margin-bottom: 15px; display: block; font-family: 'Syncopate';">2026 Vision</span>
+            <h2 style="font-family: 'Syncopate'; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 20px;">Green <span style="color: #10b981; text-shadow: 0 0 20px rgba(16, 185, 129, 0.3);">Engineering.</span></h2>
+            <p style="color: var(--text-muted); line-height: 1.8; margin-top: 20px; font-size: 0.95rem;">
+                We are integrating solar-ready infrastructure and eco-friendly waste management into every site, ensuring Gcobane builds for the next generation.
+            </p>
+        </div>
+        
+        <div class="eco-card" style="flex: 1; min-width: 300px; background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(10px); border: 1px solid var(--border); padding: 50px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
+            <h3 style="font-size: 0.8rem; color: var(--accent); margin-bottom: 25px; font-family: 'Syncopate'; letter-spacing: 2px;">SMART TECH INTEGRATION</h3>
+            <ul style="list-style: none; font-size: 0.85rem; color: #cbd5e1; line-height: 2.5;">
+                <li style="margin-bottom: 10px; display: flex; align-items: center;"><span style="color: var(--accent); margin-right: 15px; font-weight: bold;">→</span> Real-time Site Monitoring</li>
+                <li style="margin-bottom: 10px; display: flex; align-items: center;"><span style="color: var(--accent); margin-right: 15px; font-weight: bold;">→</span> Automated Electrical Load Testing</li>
+                <li style="margin-bottom: 10px; display: flex; align-items: center;"><span style="color: var(--accent); margin-right: 15px; font-weight: bold;">→</span> Sustainable Material Sourcing</li>
+                <li style="margin-bottom: 10px; display: flex; align-items: center;"><span style="color: var(--accent); margin-right: 15px; font-weight: bold;">→</span> Energy-Efficient Building Shells</li>
+            </ul>
+        </div>
+    </section>
+<section id="projects" style="padding: 100px 10%; background: #080808;">
+        <span class="section-tag" style="color: var(--accent); font-size: 0.7rem; font-weight: 700; margin-bottom: 15px; display: block; font-family: 'Syncopate';">Portfolio</span>
+        <h2 style="font-family: 'Syncopate'; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 60px;">Executed <span style="color: var(--accent);">Impact.</span></h2>
+
+        <div class="project-grid" style="display: grid; grid-template-columns: repeat(12, 1fr); gap: 25px; grid-auto-rows: 200px;">
+            
+            <div class="project-item" style="grid-column: span 8; grid-row: span 3; position: relative; overflow: hidden; border-radius: 15px; border: 1px solid rgba(251, 191, 36, 0.2); background: #111;">
+                <img src="C:\Users\thuli\OneDrive\Desktop\gcobane\transnet.jpg" alt="Transnet Housing" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6; transition: 0.6s;">
+                <div class="project-overlay" style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 40px; background: linear-gradient(transparent, rgba(0,0,0,0.9));">
+                    <span style="font-size: 0.6rem; color: var(--accent); font-family: 'Syncopate';">Building & Civil</span>
+                    <h3 style="font-family: 'Syncopate'; font-size: 1.2rem; margin: 10px 0;">TRANSNET HOUSING REFURBISHMENT</h3>
+                    <p style="font-size: 0.8rem; color: #94a3b8; max-width: 400px;">Large-scale structural renovation and housing development completed over 21 months.</p>
+                </div>
+            </div>
+
+            <div class="project-item" style="grid-column: span 4; grid-row: span 4; position: relative; overflow: hidden; border-radius: 15px; border: 1px solid rgba(251, 191, 36, 0.2); background: #111;">
+                <img src="C:\Users\thuli\OneDrive\Desktop\gcobane\elec.jpg" alt="Electrical Work" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6; transition: 0.6s;">
+                <div class="project-overlay" style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(transparent, rgba(0,0,0,0.9));">
+                    <span style="font-size: 0.6rem; color: var(--accent); font-family: 'Syncopate';">Electrical</span>
+                    <h3 style="font-family: 'Syncopate'; font-size: 0.9rem; margin: 10px 0;">ETWATWA COMMUNITY HALL</h3>
+                </div>
+            </div>
+
+            <div class="project-item" style="grid-column: span 4; grid-row: span 2; position: relative; overflow: hidden; border-radius: 15px; border: 1px solid rgba(251, 191, 36, 0.2); background: #111;">
+                <img src="C:\Users\thuli\OneDrive\Desktop\gcobane\plum.jpg" alt="Plumbing Systems" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6; transition: 0.6s;">
+                <div class="project-overlay" style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 25px; background: linear-gradient(transparent, rgba(0,0,0,0.9));">
+                    <span style="font-size: 0.6rem; color: var(--accent); font-family: 'Syncopate';">Industrial Plumbing</span>
+                    <h3 style="font-family: 'Syncopate'; font-size: 0.8rem; margin: 10px 0;">LENASIA GEYSER SYSTEMS</h3>
+                </div>
+            </div>
+
+            <div class="project-item" style="grid-column: span 4; grid-row: span 2; position: relative; overflow: hidden; border-radius: 15px; border: 1px solid rgba(251, 191, 36, 0.2); background: #111;">
+                <img src="C:\Users\thuli\OneDrive\Desktop\gcobane\gen.jpg" alt="Generator Install" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6; transition: 0.6s;">
+                <div class="project-overlay" style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 25px; background: linear-gradient(transparent, rgba(0,0,0,0.9));">
+                    <span style="font-size: 0.6rem; color: var(--accent); font-family: 'Syncopate';">Technical</span>
+                    <h3 style="font-family: 'Syncopate'; font-size: 0.8rem; margin: 10px 0;">ALBERTON WAREHOUSE GEN-SET</h3>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 60px;">
+            <p style="font-size: 0.75rem; color: var(--text-muted); letter-spacing: 2px; font-family: 'Syncopate';">View our full performance ledger below</p>
+            <div style="width: 1px; height: 50px; background: var(--accent); margin: 20px auto; opacity: 0.5;"></div>
+        </div>
+    </section>
+
+    <style>
+        .project-item:hover img {
+            transform: scale(1.1);
+            opacity: 1 !important;
+        }
+        
+        @media (max-width: 900px) {
+            .project-grid {
+                display: flex !important;
+                flex-direction: column;
+            }
+            .project-item {
+                height: 300px !important;
+            }
+        }
+    </style>
+<section id="methodology" style="padding: 100px 10%; background: #050505;">
+    <span class="section-tag" style="color: var(--accent); font-size: 0.7rem; font-weight: 700; margin-bottom: 15px; display: block; font-family: 'Syncopate';">Execution</span>
+    <h2 style="font-family: 'Syncopate'; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 60px;">The <span style="color: var(--accent);">Blueprint.</span></h2>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px;">
+        <div style="border-top: 1px solid var(--accent); padding-top: 20px;">
+            <h4 style="font-family: 'Syncopate'; font-size: 0.7rem; color: var(--accent); margin-bottom: 15px;">01. Strategy</h4>
+            <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.6;">Site analysis, feasibility studies, and precise resource allocation.</p>
+        </div>
+        <div style="border-top: 1px solid var(--accent); padding-top: 20px;">
+            <h4 style="font-family: 'Syncopate'; font-size: 0.7rem; color: var(--accent); margin-bottom: 15px;">02. Compliance</h4>
+            <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.6;">Strict adherence to OHSA standards and local building regulations.</p>
+        </div>
+        <div style="border-top: 1px solid var(--accent); padding-top: 20px;">
+            <h4 style="font-family: 'Syncopate'; font-size: 0.7rem; color: var(--accent); margin-bottom: 15px;">03. Build</h4>
+            <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.6;">High-impact execution with real-time quality control checks.</p>
+        </div>
+        <div style="border-top: 1px solid var(--accent); padding-top: 20px;">
+            <h4 style="font-family: 'Syncopate'; font-size: 0.7rem; color: var(--accent); margin-bottom: 15px;">04. Handover</h4>
+            <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.6;">Final certification, snag-list resolution, and project sign-off.</p>
+        </div>
+    </div>
+</section>
+<section style="padding: 80px 10%; background: var(--surface); border-top: 1px solid var(--border);">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 40px;">
+        <div style="max-width: 500px;">
+            <h2 style="font-size: 1.5rem; margin-bottom: 20px;">Safety is <span style="color: var(--accent);">Non-Negotiable.</span></h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.8;">
+                Gcobane Construction operates under a <strong>Zero-Harm</strong> policy. We prioritize the wellbeing of our workforce and the structural integrity of every project.
+            </p>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div style="padding: 20px; border: 1px solid rgba(255,255,255,0.05); text-align: center;">
+                <span style="display: block; font-size: 1.5rem; color: var(--accent); font-weight: 800; margin-bottom: 5px;">100%</span>
+                <span style="font-size: 0.6rem; font-family: 'Syncopate'; color: #888;">COIDA Compliant</span>
+            </div>
+            <div style="padding: 20px; border: 1px solid rgba(255,255,255,0.05); text-align: center;">
+                <span style="display: block; font-size: 1.5rem; color: var(--accent); font-weight: 800; margin-bottom: 5px;">Level 1</span>
+                <span style="font-size: 0.6rem; font-family: 'Syncopate'; color: #888;">B-BBEE Contributor</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <section id="contact" style="padding: 100px 10%;">
+        <span class="section-tag" style="color: var(--accent); font-size: 0.7rem; font-weight: 700; margin-bottom: 15px; display: block; font-family: 'Syncopate';">Contact</span>
+        <h2 style="font-family: 'Syncopate'; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 50px;">Start a <span style="color: var(--accent);">Conversation</span></h2>
+        
+        <div class="contact-wrapper" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 100px; margin-top: 50px;">
+            <div class="contact-info">
+                <h3 style="font-family: 'Syncopate'; font-size: 1.2rem; margin-bottom: 30px; letter-spacing: 2px;">Crystal Park, Benoni</h3>
+                <p style="color: var(--text-muted); line-height: 2.2; font-size: 0.95rem;">
+                    05 Waterkloof Street<br>
+                    Crystal Park, Benoni, 1500<br><br>
+                    <strong style="color: var(--accent); font-size: 0.7rem; font-family: 'Syncopate';">Direct Lines:</strong><br>
+                    072 192 9951 / 066 287 3426<br><br>
+                    <strong style="color: var(--accent); font-size: 0.7rem; font-family: 'Syncopate';">Official Email:</strong><br>
+                    mambakenneth@gmail.com
+                </p>
+            </div>
+            
+            <form class="contact-form" style="background: #0f1115; padding: 50px; border-radius: 20px; border: 1px solid rgba(251, 191, 36, 0.1); box-shadow: inset 0 0 20px rgba(0,0,0,0.5);">
+                <div class="form-group" style="margin-bottom: 25px;">
+                    <label style="display: block; font-size: 0.65rem; color: var(--accent); margin-bottom: 10px; letter-spacing: 2px; font-family: 'Syncopate';">FULL NAME</label>
+                    <input type="text" placeholder="John Doe" style="width: 100%; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 18px; color: #fff; border-radius: 8px; outline: none;">
+                </div>
+                <div class="form-group" style="margin-bottom: 25px;">
+                    <label style="display: block; font-size: 0.65rem; color: var(--accent); margin-bottom: 10px; letter-spacing: 2px; font-family: 'Syncopate';">PROJECT TYPE</label>
+                    <input type="text" placeholder="e.g. Electrical, Civil, Building" style="width: 100%; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 18px; color: #fff; border-radius: 8px; outline: none;">
+                </div>
+                <div class="form-group" style="margin-bottom: 30px;">
+                    <label style="display: block; font-size: 0.65rem; color: var(--accent); margin-bottom: 10px; letter-spacing: 2px; font-family: 'Syncopate';">MESSAGE</label>
+                    <textarea rows="4" placeholder="Describe your project requirements..." style="width: 100%; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 18px; color: #fff; border-radius: 8px; outline: none; font-family: 'Inter';"></textarea>
+                </div>
+                <button type="submit" class="cta-button" style="width: 100%; padding: 22px; background: var(--accent); color: #000; text-decoration: none; font-family: 'Syncopate'; font-weight: 700; font-size: 0.75rem; border: none; border-radius: 4px; cursor: pointer; letter-spacing: 2px; transition: 0.4s;">SUBMIT INQUIRY</button>
+            </form>
+        </div>
+    </section>
+
+   <footer style="
+    padding: 120px 8% 60px; 
+    background: #050505; 
+    border-top: 1px solid rgba(255,255,255,0.03);
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: #fff;
+">
+    <div style="
+        display: grid; 
+        grid-template-columns: 1.5fr 1fr 1fr; 
+        gap: 80px;
+        align-items: start;
+    ">
+        <div class="brand-col">
+            <div style="
+                font-family: 'Syncopate', sans-serif; 
+                font-weight: 800; 
+                font-size: 1.4rem; 
+                letter-spacing: -1px;
+                color: #fff; 
+                margin-bottom: 24px;
+                text-transform: uppercase;
+            ">
+                Gcobane<span style="color: var(--accent, #DAA520);">.</span>
+            </div>
+            <p style="
+                font-size: 0.75rem; 
+                color: rgba(255,255,255,0.5); 
+                line-height: 2; 
+                letter-spacing: 1.5px; 
+                max-width: 280px;
+                text-transform: uppercase;
+            ">
+                Precision. Power. Professionalism. <br>
+                Defining the South African Skyline.
+            </p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 30px;">
+            <h4 style="
+                font-family: 'Syncopate'; 
+                font-size: 0.65rem; 
+                color: var(--accent, #DAA520); 
+                margin-bottom: 10px; 
+                letter-spacing: 3px;
+                opacity: 0.8;
+            ">LEGAL & REG</h4>
+            <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 20px;">
+                <p style="font-size: 0.75rem; color: #888; margin-bottom: 8px;">CIPC // <span style="color: #eee;">2017/420/520/07</span></p>
+                <p style="font-size: 0.75rem; color: #888;">CIDB // <span style="color: #eee;">10237509</span></p>
+            </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 30px;">
+            <h4 style="
+                font-family: 'Syncopate'; 
+                font-size: 0.65rem; 
+                color: var(--accent, #DAA520); 
+                margin-bottom: 10px; 
+                letter-spacing: 3px;
+                opacity: 0.8;
+            ">HEADQUARTERS</h4>
+            <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 20px;">
+                <p style="font-size: 0.75rem; color: #eee; line-height: 1.8; letter-spacing: 0.5px;">
+                    Benoni, Gauteng<br>
+                    Republic of South Africa
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div style="
+        margin-top: 120px; 
+        padding-top: 40px;
+        border-top: 1px solid rgba(255,255,255,0.03);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    ">
+        <div style="
+            opacity: 0.4; 
+            font-size: 0.6rem; 
+            letter-spacing: 4px; 
+            font-family: 'Syncopate';
+            text-transform: uppercase;
+        ">
+            © 2026 GCOBANE CONSTRUCTION & PROJECTS
+        </div>
+        
+        <div style="
+            width: 100px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent, #DAA520));
+        "></div>
+    </div>
+</footer>
